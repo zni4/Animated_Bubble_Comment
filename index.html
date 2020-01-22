@@ -8,27 +8,55 @@
 </head>
 <body>
     <div class="bubble_comment_right">
+        <b>DERECHA</b><br />
         Prueba a escribir a ver como queda cuando ponemos un texto más o menos largo niño. La altura mínima
         de la buburja se fija en 80px, a partir de esa altura, la bubuja se ajusta automáticamante en función
         del tamaño del texto que se muestra en la misma.
     </div>
     <br />
     <div class="bubble_comment_left">
+        <b>IZQUIERDA</b><br />
         Prueba a escribir a ver como queda cuando ponemos un texto más o menos largo niño. La altura mínima
         de la buburja se fija en 80px, a partir de esa altura, la bubuja se ajusta automáticamante en función
         del tamaño del texto que se muestra en la misma.
     </div>
     <br />
     <div class="bubble_comment_top">
+        <b>ARRIBA</b><br />
         Prueba a escribir a ver como queda cuando ponemos un texto más o menos largo niño. La altura mínima
         de la buburja se fija en 80px, a partir de esa altura, la bubuja se ajusta automáticamante en función
         del tamaño del texto que se muestra en la misma.
     </div>
     <br />
     <div class="bubble_comment_bottom">
+        <b>ABAJO</b><br />
         Prueba a escribir a ver como queda cuando ponemos un texto más o menos largo niño. La altura mínima
         de la buburja se fija en 80px, a partir de esa altura, la bubuja se ajusta automáticamante en función
         del tamaño del texto que se muestra en la misma.
     </div>
+    <br />
+    <div class="contenedor">
+        <div id="texto" onmouseover="mostrarBurbuja();" onmouseout="ocultarBurbuja();">
+            Pasa el ratón...Prueba a escribir a ver como queda cuando ponemos un texto más o menos largo niño. La altura mínima
+            de la buburja se fija en 80px, a partir de esa altura, la bubuja se ajusta automáticamante en función
+            del tamaño del texto que se muestra en la misma.
+        </div>
+        <div id="comentario" class="bubble_comment_left2 invisible">
+            Prueba a escribir a ver como queda cuando ponemos un texto más o menos largo niño. La altura mínima
+            de la buburja se fija en 80px, a partir de esa altura, la bubuja se ajusta automáticamante en función
+            del tamaño del texto que se muestra en la misma.
+        </div>
+    </div>
+    <script>
+    function mostrarBurbuja() {
+        document.getElementById("comentario").classList.remove("invisible");
+        document.getElementById("comentario").classList.add("visible");
+    }
+
+    function ocultarBurbuja() {
+        document.getElementById("comentario").classList.add("invisible");
+        document.getElementById("comentario").classList.remove("visible");
+    }
+    </script>
 </body>
 </html>
