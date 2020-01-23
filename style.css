@@ -183,6 +183,17 @@
     overflow: hidden;
     text-overflow: ellipsis;
     margin-left: 100px;
+    border-radius: 5px;
+}
+
+    .texto:hover{
+        background-color: black;
+        color: white;
+    }
+
+.resaltar {
+    background-color: black;
+    color: white;
 }
 
 .invisible {
@@ -261,7 +272,11 @@
         background-color: #b0aeae;
     }
 
-    .bubble_comment_left3:hover:after {
+    /*.bubble_comment_left3:hover:after {
+        animation: 1s linear 0s 1 slideArrowUpDown;
+    }*/
+
+    .bubble_comment_left3:start:after {
         animation: 1s linear 0s 1 slideArrowUpDown;
     }
 

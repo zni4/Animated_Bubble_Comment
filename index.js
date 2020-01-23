@@ -20,7 +20,12 @@ function ocultarBurbuja2() {
 }
 
 function mostrarBurbuja3(id) {
-    
+
+    if (document.getElementsByClassName('resaltar')[0] != null) {
+        document.getElementsByClassName('resaltar')[0].classList.remove('resaltar'); //quitamos el texto resaltado
+    }
+    document.getElementById(id).classList.add('resaltar'); //resaltamos el texto
+
     var divModal = document.getElementById('comentario3');
 
     var comentario = document.getElementById('comentario3');
@@ -40,6 +45,8 @@ function mostrarBurbuja3(id) {
 }
 
 function ocultarBurbuja3() {
+    document.getElementsByClassName('resaltar')[0].classList.remove('resaltar'); //quitamos el texto resaltado
+
     var divModal = document.getElementById('comentario3');
 
     var comentario = document.getElementById('comentario3');
