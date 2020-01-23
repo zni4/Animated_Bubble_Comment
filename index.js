@@ -34,7 +34,7 @@ function mostrarBurbuja3(id) {
 
     var texto = document.getElementById(id).innerText;
 
-    divNodo.innerHTML += '<div id="comentario3" class="bubble_comment_left3"><div class="closeButton" onclick="ocultarBurbuja3();"><b>CERRAR &times</b></div>' + texto + '</div>';
+    divNodo.innerHTML += '<div id="comentario3" class="bubble_comment_left3"><div class="closeButton" onclick="ocultarBurbuja3();">CERRAR &times</div>' + texto + '</div>';
     
     divModal = divNodo;
 }

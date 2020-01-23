@@ -264,9 +264,9 @@
         animation: 1s linear 0s 1 slideArrowUpDown;
     }
 
-    .bubble_comment_left3:hover {
+    /*.bubble_comment_left3:hover {
         cursor: pointer;
-    }
+    }*/
 
 .contenedor_comentario {
     height: 0;
@@ -279,5 +279,10 @@
     text-align: right;
     border-bottom: 1px solid black;
     padding-bottom: 1px;
-    margin-bottom: 1px;
+    margin-bottom: 2px;
+    font-weight: bold;
 }
+
+    .closeButton:hover {
+        cursor: pointer;
+    }
