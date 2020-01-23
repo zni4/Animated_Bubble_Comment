@@ -182,6 +182,7 @@
     border: solid 2px black;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-left: 100px;
 }
 
 .invisible {
@@ -243,7 +244,7 @@
     min-height: 50px;
     box-shadow: 2px 2px 5px black;
     word-wrap: break-word;
-    margin-left: 310px;
+    margin-left: 410px;
     margin-top: -20px;
     transform: translateY(-50%);
 }
