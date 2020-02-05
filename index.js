@@ -55,3 +55,18 @@ function ocultarBurbuja3() {
         comentario.parentNode.removeChild(comentario);
     }
 }
+
+//Para cambiar el modo de oscuro a claro y viceversa
+
+function CambiarModo() {
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+    if (toggleSwitch.checked === true) {
+        document.documentElement.setAttribute('tema', 'oscuro');
+        document.getElementById('modo').innerHTML = 'Modo OSCURO';
+    }
+    else {
+        document.documentElement.setAttribute('tema', 'claro');
+        document.getElementById('modo').innerHTML = 'Modo CLARO';
+    }
+}
