@@ -301,25 +301,30 @@ body {
     transform: translateY(-50%);
 }
 
+    .ampliar_bubble_text {
+        font-size: medium;
+        width: 300px;
+    }
+
 .bubble_comment_left3:after {
-	content: '';
-	box-sizing: content-box;
-	position: absolute;
-	top: 50%;
-	left: -5px;
-	width: 11px;
-	height: 11px;
-	transform: translate(0%, -50%) rotate(45deg);
-	background-color: var(--bg-bubble-color);
+    content: '';
+    box-sizing: content-box;
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    width: 11px;
+    height: 11px;
+    transform: translate(0%, -50%) rotate(45deg);
+    background-color: var(--bg-bubble-color);
 }
 
 /*.bubble_comment_left3:hover:after {
         animation: 1s linear 0s 1 slideArrowUpDown;
     }*/
 
-.bubble_comment_left3:start:after {
+/*.bubble_comment_left3:start:after {
 	animation: 1s linear 0s 1 slideArrowUpDown;
-}
+}*/
 
 /*.bubble_comment_left3:hover {
         cursor: pointer;

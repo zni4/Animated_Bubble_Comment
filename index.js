@@ -39,7 +39,7 @@ function mostrarBurbuja3(id) {
 
     var texto = document.getElementById(id).innerText;
 
-    divNodo.innerHTML += '<div id="comentario3" class="bubble_comment_left3"><div class="closeButton" onclick="ocultarBurbuja3();">CERRAR &times</div>' + texto + '</div>';
+    divNodo.innerHTML += '<div id="comentario3" class="bubble_comment_left3" onmouseover="aumentarTexto(ampliarTexto);" onmouseout="textoSinAmpliar();"><div class="closeButton" onclick="ocultarBurbuja3();">CERRAR &times</div>' + texto + '</div>';
     
     divModal = divNodo;
 }
@@ -80,4 +80,30 @@ function CambiarLetra() {
     else {
         document.documentElement.setAttribute('letra', 'original');
     }
+}
+
+var ampliarTexto = false;
+
+function activarAmpliarTexto() {
+    const toggleSwitch = document.querySelector('#ampliarTexto');
+
+    if (toggleSwitch.checked === true) {
+        ampliarTexto = true;
+    }
+    else {
+        ampliarTexto = false;
+    }
+}
+
+function aumentarTexto(ampliarTexto) {
+    if (ampliarTexto === true) {
+        document.getElementById('comentario3').classList.add('ampliar_bubble_text');
+    }
+    else {
+        document.getElementById('comentario3').classList.remove('ampliar_bubble_text');
+    }
+}
+
+function textoSinAmpliar() {
+    document.getElementById('comentario3').classList.remove('ampliar_bubble_text');
 }
