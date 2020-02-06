@@ -7,6 +7,7 @@
     --border-color: red;
     --body-tipo-letra: 'Arial';
     --bubble-tipo-letra: 'Lucida Sans';
+    --bg-options: #93a5c1;
 }
 
 [tema="oscuro"] {
@@ -16,6 +17,7 @@
     --reverse-font-color: #000000;
     --body-bg-color: #000000;
     --border-color: #00ffff;
+    --bg-options: #6c5a3e;
 }
 
 [letra="alternativa"] {
@@ -356,6 +358,9 @@ body {
     right: 0%;
     display: flex;
     align-items: center;
+    background-color: var(--bg-options);
+    border-radius: 15px;
+    padding: 5px 10px;
 }
 
 .theme-switch-wrapper span {
@@ -365,11 +370,14 @@ body {
 }
 
 .theme-switch {
-    margin-left: 10px;
     display: inline-block;
     height: 11px;
     position: relative;
     width: 20px;
+}
+
+.theme-switch:not(:first-child) {
+    margin-left: 10px;
 }
 
 .theme-switch input {
