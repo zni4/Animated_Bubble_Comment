@@ -59,7 +59,7 @@ function ocultarBurbuja3() {
 //Para cambiar el modo de oscuro a claro y viceversa
 
 function CambiarModo() {
-    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    const toggleSwitch = document.querySelector('#cambioModo');
 
     if (toggleSwitch.checked === true) {
         document.documentElement.setAttribute('tema', 'oscuro');
@@ -68,5 +68,16 @@ function CambiarModo() {
     else {
         document.documentElement.setAttribute('tema', 'claro');
         document.getElementById('modo').innerHTML = 'Modo CLARO';
+    }
+}
+
+function CambiarLetra() {
+    const toggleSwitch = document.querySelector('#cambioLetra');
+
+    if (toggleSwitch.checked === true) {
+        document.documentElement.setAttribute('letra', 'alternativa');
+    }
+    else {
+        document.documentElement.setAttribute('letra', '');
     }
 }

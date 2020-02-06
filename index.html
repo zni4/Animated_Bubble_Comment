@@ -10,11 +10,17 @@
 	</head>
     <body>
         <div class="theme-switch-wrapper">
-            <label class="theme-switch" for="checkbox">
-                <input type="checkbox" id="checkbox" onchange="CambiarModo();" />
+            <label class="theme-switch" for="cambioModo">
+                <input type="checkbox" id="cambioModo" onchange="CambiarModo();" />
                 <div class="slider round"></div>
             </label>
             <span>Habilitar modo oscuro</span>
+
+            <label class="theme-switch" for="cambioLetra">
+                <input type="checkbox" id="cambioLetra" onchange="CambiarLetra();" />
+                <div class="slider round"></div>
+            </label>
+            <span>Cambiar letra</span>
         </div>
         <h1 id="modo">Modo CLARO</h1>
 
