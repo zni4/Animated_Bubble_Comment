@@ -78,6 +78,6 @@ function CambiarLetra() {
         document.documentElement.setAttribute('letra', 'alternativa');
     }
     else {
-        document.documentElement.setAttribute('letra', '');
+        document.documentElement.setAttribute('letra', 'original');
     }
 }
