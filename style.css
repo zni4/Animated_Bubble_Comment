@@ -426,14 +426,33 @@ input:checked + .slider:before {
 	border-radius: 50%;
 }
 
+#modo, #idioma {
+    position: absolute;
+    background-color: var(--body-bg-color);
+    border: 3px solid var(--bg-secondary-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px var(--bg-secondary-color);
+}
+
 #modo {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	background-color: var(--body-bg-color);
-	border: 3px solid var(--bg-secondary-color);
-	padding: 10px 20px;
-	border-radius: 10px;
-	transform: translate(-50%, -50%);
-	box-shadow: 5px 5px 5px var(--bg-secondary-color);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#idioma {
+    top: 5%;
+    left: 50%;
+}
+
+.idioma {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.idioma:hover {
+    cursor: pointer;
 }

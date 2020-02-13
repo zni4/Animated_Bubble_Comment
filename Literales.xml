@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Literales>
+  <Literal Id="drcha">
+    <ES>DERECHA</ES>
+    <EN>RIGHT</EN>
+  </Literal>
+  <Literal Id="izda">
+    <ES>IZQUIERDA</ES>
+    <EN>LEFT</EN>
+  </Literal>
+  <Literal Id="arriba">
+    <ES>ARRIBA</ES>
+    <EN>UP</EN>
+  </Literal>
+  <Literal Id="abajo">
+    <ES>ABAJO</ES>
+    <EN>DOWN</EN>
+  </Literal>
+  <Literal Id="claro">
+    <ES>MODO CLARO</ES>
+    <EN>LIGHT MODE</EN>
+  </Literal>
+  <Literal Id="oscuro">
+    <ES>MODO OSCURO</ES>
+    <EN>DARK MODE</EN>
+  </Literal>
+  <Literal Id="ampTexto">
+    <ES>Ampliar texto</ES>
+    <EN>Expand text</EN>
+  </Literal>
+  <Literal Id="habModoOsc">
+    <ES>Habilitar modo oscuro</ES>
+    <EN>Enable dark mode</EN>
+  </Literal>
+  <Literal Id="cambLetra">
+    <ES>Cambiar letra</ES>
+    <EN>Change font</EN>
+  </Literal>
+</Literales>
