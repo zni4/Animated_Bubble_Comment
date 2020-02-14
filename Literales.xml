@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Literales>
+  <Literal Id="cerrar">
+    <ES>CERRAR</ES>
+    <EN>CLOSE</EN>
+  </Literal>
   <Literal Id="drcha">
     <ES>DERECHA</ES>
     <EN>RIGHT</EN>
@@ -35,5 +39,41 @@
   <Literal Id="cambLetra">
     <ES>Cambiar letra</ES>
     <EN>Change font</EN>
+  </Literal>
+  <Literal Id="tooltip">
+    <ES>Pulse para recargar la página en otro idioma, se resetean todas las selecciones realizadas.</ES>
+    <EN>Press to reload the page in another language, all selections made are reset.</EN>
+  </Literal>
+  <Literal Id="invisible">
+    <ES>INVISIBLE</ES>
+    <EN>INVISIBLE</EN>
+  </Literal>
+  <Literal Id="oculto">
+    <ES>OCULTO</ES>
+    <EN>HIDDEN</EN>
+  </Literal>
+  <Literal Id="generar">
+    <ES>GENERAR</ES>
+    <EN>GENERATE</EN>
+  </Literal>
+  <Literal Id="mouseover">
+    <ES>Pasa el ratón...</ES>
+    <EN>Hover me...</EN>
+  </Literal>
+  <Literal Id="textoGeneral">
+    <ES>
+      Prueba a escribir a ver como queda cuando ponemos un texto más o menos largo niño. La altura mínima de la burbuja se fija en 80px, a partir de esa altura, la burbuja se ajusta automáticamante en función del tamaño del texto que se muestra en la misma.
+    </ES>
+    <EN>
+      Writing test to see how it looks when we put a text more or less long child. The minimum height of the bubble is set at 80px, from that height, the bubble adjusts automatically based on the size of the text shown in the same.
+    </EN>
+  </Literal>
+  <Literal Id="texto1">
+    <ES>PRUEBA a ver que pasa.</ES>
+    <EN>TEST to see what happens.</EN>
+  </Literal>
+  <Literal Id="texto2">
+    <ES>NUEVO ELEMENTO QUE INCLUYO el 25-01-2020 para ver.</ES>
+    <EN>NEW ELEMENT INCLUDED on 25-01-2020 to see.</EN>
   </Literal>
 </Literales>

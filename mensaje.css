@@ -1,0 +1,82 @@
+.MensajeAviso {
+    font-family: sans-serif;
+    background-color: #ffffff;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 19001;
+    border: 1px solid black;
+    width: 400px;
+    height: 200px;
+    box-shadow: grey 0px 0px 10px 2px;
+}
+
+    .MensajeAviso .cabecera {
+        padding: 10px;
+        border-bottom: 2px solid #47a447;
+    }
+
+        .MensajeAviso .cabecera button {
+            background: transparent;
+            border: 0;
+            float: right;
+            font-weight: bold;
+            line-height: 1;
+            color: #000000;
+            opacity: 0.4;
+            cursor: pointer;
+        }
+
+        .MensajeAviso .cabecera h4 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+    .MensajeAviso .body {
+        height: 95px;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 10px;
+    }
+
+        .MensajeAviso .body p {
+            margin-left: 85px;
+            font-size: 12px;
+        }
+
+        .MensajeAviso .body .imagen_question {
+            float: left;
+            width: 72px;
+            height: 50px;
+            background-image: url('/./../images/Idioma.jpg');
+        }
+
+    .MensajeAviso .footer {
+        text-align: right;
+    }
+
+.contenedor_mensaje {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.4;
+    z-index: 19000;
+}
+
+.img_button {
+    border-radius: 10px;
+    width: 50px;
+    height: 30px;
+    margin-top: 7px;
+    margin-right: 10px;
+    opacity: 0.7;
+    border: 2px solid grey;
+}
+
+    .img_button:hover {
+        opacity: 1;
+    }

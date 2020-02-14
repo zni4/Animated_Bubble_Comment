@@ -38,7 +38,7 @@ function mostrarBurbuja3(id) {
 	var texto = document.getElementById(id).innerText;
 
 	divNodo.innerHTML +=
-		'<div id="comentario3" class="bubble_comment_left3" onmouseover="aumentarTexto(ampliarTexto);" onmouseout="textoSinAmpliar();"><div class="closeButton" onclick="ocultarBurbuja3();">CERRAR &times</div>' +
+		'<div id="comentario3" class="bubble_comment_left3" onmouseover="aumentarTexto(ampliarTexto);" onmouseout="textoSinAmpliar();"><div class="closeButton" onclick="ocultarBurbuja3();">' + TraducirClave("cerrar") + ' &times</div>' +
 		texto +
 		'</div>';
 
@@ -64,10 +64,10 @@ function CambiarModo() {
 
 	if (toggleSwitch.checked === true) {
 		document.documentElement.setAttribute('tema', 'oscuro');
-		document.getElementById('modo').innerHTML = '{oscuro}';
+		document.getElementById('modo').innerHTML = TraducirClave('oscuro');
 	} else {
 		document.documentElement.setAttribute('tema', 'claro');
-		document.getElementById('modo').innerHTML = '{claro}';
+		document.getElementById('modo').innerHTML = TraducirClave('claro');
     }
 }
 
@@ -141,16 +141,10 @@ function seleccionarIdioma(idioma) {
     TraducirPagina(contenidoSinTraducir, mIdiomaActual);
 
     if (idioma === 'Español') {
-        document.getElementById('español').style.opacity = "1";
-        document.getElementById('ingles').style.opacity = "0.3";
-
-        document.getElementById('idioma').innerText = TraducirLiteral('<ES>Español</ES><EN>Inglés</EN>') + ', con lo que tengo hecho si se cambia algun elemento no funciona bien la traducción. sirve solo para traducir textos fijos';
+        document.getElementById('idiomaSeleccionado').src = "./images/Español.png";
     }
     else if (idioma === 'Ingles') {
-        document.getElementById('ingles').style.opacity = "1";
-        document.getElementById('español').style.opacity = "0.3";
-
-        document.getElementById('idioma').innerText = TraducirLiteral('<ES>Spanish</ES><EN>English</EN>') + ', con lo que tengo hecho si se cambia algun elemento no funciona bien la traducción. sirve solo para traducir textos fijos';
+        document.getElementById('idiomaSeleccionado').src = "./images/Ingles.png";
     }
 }
 
@@ -174,6 +168,28 @@ function TraducirLiteral(literal, idioma) {
     else {
         return ''
     }
+}
+
+function TraducirClave(clave, idioma) {
+
+    if (idioma == undefined) {
+        idioma = mIdiomaActual;
+    }
+
+    var rutaLiterales = './Literales.xml';
+
+    var textoTraducido = "";
+
+    //Obtener la traducción de la clave
+    var xmlDoc = AbrirFichero(rutaLiterales);
+
+    for (j = 0; j < xmlDoc.getElementsByTagName('Literal').length; j++) {
+        if (clave === xmlDoc.getElementsByTagName('Literal')[j].getAttribute('Id')) {
+            textoTraducido = xmlDoc.getElementsByTagName(idioma)[j].childNodes[0].nodeValue;
+            j = xmlDoc.getElementsByTagName('Literal').length; //Para salir del bucle
+        }
+    }
+    return textoTraducido;
 }
 
 function TraducirPagina(contenidoSinTraducir, idioma) {
@@ -229,4 +245,58 @@ function AbrirFichero(fichXML) {
         }
     }
     return xmlDoc;
+}
+
+function MostrarMensaje(textoMensaje) {
+
+    var cabeceraMensaje = "¿Idioma?";
+    var imagen = "imagen_question";
+
+    var divModal = document.getElementById('Mensaje');
+
+    var pMensajeError =
+        textoMensaje === undefined || textoMensaje === '' ? '' : textoMensaje;
+
+    var mensaje = document.getElementById('Mensaje');
+
+    if (divModal != null) {
+        mensaje.parentNode.removeChild(mensaje); //Elimina el mensaje si este ya existe
+    }
+
+    //Obtenemos el body y creamos el elemento
+    var divBody = document.getElementsByTagName('body')[0];
+    var divNodo = document.createElement('div');
+
+    divNodo.id = 'Mensaje';
+    divNodo.innerHTML = '<div class="contenedor_mensaje"></div>';
+    divBody.appendChild(divNodo);
+    divModal = divNodo;
+
+    divModal.innerHTML +=
+        '<div class="MensajeAviso"><div class="cabecera"><button onclick="OcultarMensaje();">&times;</button><h4>' +
+        cabeceraMensaje +
+        '</h4></div><div class="body"><span class="' +
+        imagen + '"></span><p>' + textoMensaje +
+    '</p></div><div class="footer"><input type="image" class="img_button" src="./images/Español.png" onclick="Responder(' + '1' + ');"></input><input type="image" class="img_button" src="./images/Ingles.png" onclick="Responder(' + '0' + ');"></image></div></div>';
+}
+
+function OcultarMensaje() {
+    var divModal = document.getElementById('Mensaje');
+
+    var mensaje = document.getElementById('Mensaje');
+
+    if (divModal != null) {
+        mensaje.parentNode.removeChild(mensaje); // Elimina el mensaje
+    }
+}
+
+function Responder(respuesta) {
+    if (respuesta === 1) {
+        seleccionarIdioma('Español');
+    }
+    else {
+        seleccionarIdioma('Ingles');
+    }
+
+    OcultarMensaje();
 }

@@ -456,3 +456,28 @@ input:checked + .slider:before {
 .idioma:hover {
     cursor: pointer;
 }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: var(--font-color);
+        color: var(--body-bg-color);
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        font-size: xx-small;
+        font-weight: 100;
+        z-index: 1;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }

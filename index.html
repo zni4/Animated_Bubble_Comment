@@ -5,17 +5,18 @@
     <title>bubble_comment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./mensaje.css" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!--Tiene que ir lo primero-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="./index.js"></script>
-    
+
     <script>
         $(document).ready(function () {
             informarContenidoSinTraducir();
-            seleccionarIdioma('Español');
+            MostrarMensaje('Seleccione el idioma en el que desea que se muestre la aplicación.');
         })
-
     </script>
+
 </head>
     <body>
         <div class="theme-switch-wrapper">
@@ -39,44 +40,32 @@
             </label>
             <span onclick="activarCheckbox('ampliarTexto'); activarAmpliarTexto();">{ampTexto}</span>
 
-            <img class="idioma" id="español" src="./images/Español.png" onclick="seleccionarIdioma('Español');" />
-            <img class="idioma" id="ingles" src="./images/Ingles.png" onclick="seleccionarIdioma('Ingles');" />
+            <div class="tooltip">
+                <span class="tooltiptext">{tooltip}</span>
+                <img class="idioma" id="idiomaSeleccionado" src="./images/Español.png" onclick="location.reload()" />
+            </div>
 
-        </div>
+            </div>
         <h1 id="modo">{claro}</h1>
-
-        <h1 id="idioma">Español, con lo que tengo hecho si se cambia algun elemento no funciona bien la traducción. sirve solo para traducir textos fijos</h1>
 
         <div class="bubble_comment_right">
             <b>{drcha}</b><br />
-            Prueba a escribir a ver como queda cuando ponemos un texto más o menos
-            largo niño. La altura mínima de la burbuja se fija en 80px, a partir de
-            esa altura, la burbuja se ajusta automáticamante en función del tamaño del
-            texto que se muestra en la misma.
+            {textoGeneral}
         </div>
         <br />
         <div class="bubble_comment_left">
             <b>{izda}</b><br />
-            Prueba a escribir a ver como queda cuando ponemos un texto más o menos
-            largo niño. La altura mínima de la burbuja se fija en 80px, a partir de
-            esa altura, la burbuja se ajusta automáticamante en función del tamaño del
-            texto que se muestra en la misma.
+            {textoGeneral}
         </div>
         <br />
         <div class="bubble_comment_top">
             <b>{arriba}</b><br />
-            Prueba a escribir a ver como queda cuando ponemos un texto más o menos
-            largo niño. La altura mínima de la burbuja se fija en 80px, a partir de
-            esa altura, la burbuja se ajusta automáticamante en función del tamaño del
-            texto que se muestra en la misma.
+            {textoGeneral}
         </div>
         <br />
         <div class="bubble_comment_bottom">
             <b>{abajo}</b><br />
-            Prueba a escribir a ver como queda cuando ponemos un texto más o menos
-            largo niño. La altura mínima de la burbuja se fija en 80px, a partir de
-            esa altura, la burbuja se ajusta automáticamante en función del tamaño del
-            texto que se muestra en la misma.
+            {textoGeneral}
         </div>
         <br />
         <div class="contenedor">
@@ -84,17 +73,10 @@
                  class="texto"
                  onmouseover="mostrarBurbuja();"
                  onmouseout="ocultarBurbuja();">
-                Pasa el ratón... <b>INVISIBLE</b> Prueba a escribir a ver como queda
-                cuando ponemos un texto más o menos largo niño. La altura mínima de la
-                burbuja se fija en 80px, a partir de esa altura, la burbuja se ajusta
-                automáticamante en función del tamaño del texto que se muestra en la
-                misma.
+                {mouseover} <b>{invisible}</b> {textoGeneral}
             </div>
             <div id="comentario" class="bubble_comment_left2 invisible">
-                Prueba a escribir a ver como queda cuando ponemos un texto más o menos
-                largo niño. La altura mínima de la burbuja se fija en 80px, a partir de
-                esa altura, la burbuja se ajusta automáticamante en función del tamaño
-                del texto que se muestra en la misma.
+                {textoGeneral}
             </div>
         </div>
         <div class="contenedor">
@@ -102,39 +84,28 @@
                  class="texto"
                  onmouseover="mostrarBurbuja2();"
                  onmouseout="ocultarBurbuja2();">
-                Pasa el ratón... <b>OCULTO</b> Prueba a escribir a ver como queda cuando
-                ponemos un texto más o menos largo niño. La altura mínima de la burbuja
-                se fija en 80px, a partir de esa altura, la burbuja se ajusta
-                automáticamante en función del tamaño del texto que se muestra en la
-                misma.
+                {mouseover} <b>{oculto}</b> {textoGeneral}
             </div>
             <div id="comentario2" class="bubble_comment_left2 oculto">
-                Prueba a escribir a ver como queda cuando ponemos un texto más o menos
-                largo niño. La altura mínima de la burbuja se fija en 80px, a partir de
-                esa altura, la burbuja se ajusta automáticamante en función del tamaño
-                del texto que se muestra en la misma.
+                {textoGeneral}
             </div>
         </div>
 
         <div id="contenedor_comentario_texto3" class="contenedor_comentario">
             <div id="texto3" class="texto" onmouseover="mostrarBurbuja3(this.id);">
-                Pasa el ratón... <b>GENERAR</b> Prueba a escribir a ver como queda
-                cuando ponemos un texto más o menos largo niño. La altura mínima de la
-                burbuja se fija en 80px, a partir de esa altura, la burbuja se ajusta
-                automáticamante en función del tamaño del texto que se muestra en la
-                misma.
+                {mouseover} <b>{generar}</b> {textoGeneral}
             </div>
         </div>
 
         <div id="contenedor_comentario_texto4" class="contenedor_comentario">
             <div id="texto4" class="texto" onmouseover="mostrarBurbuja3(this.id);">
-                <b>GENERAR</b> PRUEBA a ver que pasa.
+                <b>{generar}</b> {texto1}
             </div>
         </div>
 
         <div id="contenedor_comentario_texto5" class="contenedor_comentario">
             <div id="texto5" class="texto" onmouseover="mostrarBurbuja3(this.id);">
-                <b>GENERAR</b> NUEVO ELEMENTO QUE INCLUYO el 25-01-2020 para ver.
+                <b>{generar}</b> {texto2}
             </div>
         </div>
     </body>
